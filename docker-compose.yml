@@ -1,0 +1,15 @@
+version: "3"
+services:
+    vapor-backend:
+      build: ./Backend/server
+      ports:
+        - 8222:8000
+      container_name: Backend_container
+      command: python manage.py runserver 0.0.0.0:8000    
+
+    vapor-frontend:
+      build: ./Frontend/client
+      ports:
+        - 8223:3000
+      container_name: Front_container
+      command: npm run dev     
